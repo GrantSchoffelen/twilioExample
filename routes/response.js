@@ -9,7 +9,7 @@ router.post('/', function(req, res) {
 	console.log('hit response page')
 	console.log(req.body, "bodyyyyyyyyyyyyyyyyyyyyyyy")
 
-	if(req.body.Body.toLowerCase() === 'yes'){
+	if(req.body.Body.toLowerCase().replace(/\s/g, '') === 'yes'){
         console.log('hit yes')
 	
   client.messages.create({
@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
 });
 }
 
-else if(req.body.Body.toLowerCase() === 'no'){
+else if(req.body.Body.toLowerCase().replace(/\s/g, '') === 'no'){
     console.log('hit no')
 	
   client.messages.create({
