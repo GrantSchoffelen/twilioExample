@@ -7,15 +7,29 @@ var client = require('twilio')("AC055e2c406321688db01756618570376e", "3ed6d61c3e
 /* GET home page. */
 router.post('/', function(req, res) {
 	console.log('hit response page')
-	console.log(req.body)
+	console.log(req.body.Body)
+
+	if(req.body.Body.toLowerCase(); === 'yes'){
 	
   client.messages.create({
-    body: "thanks for responding",
+    body: "Great job, keep up the good work!",
     to: "+16094396656",
     from: "+16096143170"
 }, function(err, message) {
     console.log(err)
 });
+}
+
+else if(req.body.Body.toLowerCase(); === 'no'){
+	
+  client.messages.create({
+    body: "I hope your feeling alright, would you like me to put you in contact with a super nurse? Enter Yes or No",
+    to: "+16094396656",
+    from: "+16096143170"
+}, function(err, message) {
+    console.log(err)
+});
+}
 
 });
 
