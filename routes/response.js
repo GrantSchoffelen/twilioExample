@@ -25,7 +25,19 @@ else if(req.body.Body.toLowerCase().replace(/\s/g, '') === 'no'){
     console.log('hit no')
 	
   client.messages.create({
-    body: "I hope your feeling alright, would you like me to put you in contact with a super nurse? Enter Yes or No",
+    body: "I hope your feeling alright, would you like me to put you in contact with a super nurse? Enter nurse if you would like one otherwise you can just ignore this message",
+    to: "+16094396656",
+    from: "+16096143170"
+}, function(err, message) {
+    console.log(err)
+});
+}
+
+else if(req.body.Body.toLowerCase().replace(/\s/g, '') === 'nurse'){
+    console.log('hit no')
+    
+  client.messages.create({
+    body: "Stay where you are, nurse betty is on the way",
     to: "+16094396656",
     from: "+16096143170"
 }, function(err, message) {
