@@ -9,7 +9,7 @@ router.post('/', function(req, res) {
 	console.log('hit response page')
 	console.log(req.body.Body)
 
-	if(req.body.Body.toLowerCase(); === 'yes'){
+	if(req.body.Body.toLowerCase() === 'yes'){
 	
   client.messages.create({
     body: "Great job, keep up the good work!",
@@ -20,7 +20,7 @@ router.post('/', function(req, res) {
 });
 }
 
-else if(req.body.Body.toLowerCase(); === 'no'){
+else if(req.body.Body.toLowerCase() === 'no'){
 	
   client.messages.create({
     body: "I hope your feeling alright, would you like me to put you in contact with a super nurse? Enter Yes or No",
