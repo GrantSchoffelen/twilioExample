@@ -8,9 +8,8 @@ var client = require('twilio')("AC055e2c406321688db01756618570376e", "3ed6d61c3e
 /* GET home page. */
 router.post('/', function(req, res) {
 
-	
   client.messages.create({
-    body: "Hey Did you remember to "+ req.body.title + "? Enter Yes or No",
+    body: "Hey Did you remember to " + req.body.title + "? Enter Yes or No",
     to: "+16094396656",
     from: "+16096143170"
 }, function(err, message) {
